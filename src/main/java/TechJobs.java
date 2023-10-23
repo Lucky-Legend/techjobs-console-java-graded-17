@@ -119,9 +119,9 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
-        String divider = "*****\n";
+        String divider = "*****";
         if (someJobs.isEmpty()) {
-            System.out.println("No Results");
+            System.out.print("No Results");//just use print (NOT println) when you do not want to make a newline
         } else {
             for (HashMap<String, String> job : someJobs) {
                 ArrayList<String> jobColumn = new ArrayList<>(job.keySet());
@@ -133,7 +133,7 @@ public class TechJobs {
                     output += jobColumn.get(i) + ": " + jobDetails.get(i) + "\n";
                 }
 
-                System.out.println(divider + output + divider);
+                System.out.println("\n" + divider + "\n" + output + divider);
             }
         }
 
