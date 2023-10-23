@@ -94,8 +94,20 @@ public class JobData {
         // load data, if not already loaded
         loadData();
 
+        ArrayList<HashMap<String, String>> jobKeyValuePair = new ArrayList<>();
+
+        for (HashMap<String, String> job : allJobs) {
+            for (String data : job.values()) {
+                if (data.toLowerCase().contains(value.toLowerCase())) {
+                    if (!jobKeyValuePair.contains(job)) {
+                        jobKeyValuePair.add(job);
+                    }
+                }
+            }
+        }
+        return jobKeyValuePair;
         // TODO - implement this method
-        return null;
+        //return null;
     }
 
     /**
